@@ -8,7 +8,7 @@ const routeResponseMap = {
   "/error": "<h1>Sorry the page you are looking for is not here.</h1>"
 };
 
-const port = 3000,
+const port = 8000,
   http = require("http"),
   httpStatus = require("http-status-codes"),
   app = http.createServer((req, res) => {
@@ -18,7 +18,7 @@ const port = 3000,
     if (routeResponseMap[req.url]) {
       res.end(routeResponseMap[req.url]);
     } else {
-      res.end("<h1>Welcome!</h1>");
+      res.end("<h1 style='color:brown;'>Welcome Lindokuhle!</h1>");
     }
   });
 app.listen(port);
