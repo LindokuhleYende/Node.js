@@ -27,6 +27,10 @@ router.get("/index.html", (req, res) => {
     res.writeHead(httpStatusCodes.OK, htmlContentType);
     customReadFile("views/index.html", res);
 });
+router.get("/contact.html", (req, res) => {
+    res.writeHead(httpStatusCodes.OK, htmlContentType);
+    customReadFile("views/contact.html", res);
+});
 router.post("/", (req, res) => {
     res.writeHead(httpStatusCodes.OK, plainTextContentType);
     res.end("POSTED");
