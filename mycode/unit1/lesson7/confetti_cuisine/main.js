@@ -1,6 +1,6 @@
 "use strict";
 
-const port = 3000,
+const port = 3070,
     http = require("http"),
     httpStatus = require("http-status-codes"),
     router = require("./router"),
