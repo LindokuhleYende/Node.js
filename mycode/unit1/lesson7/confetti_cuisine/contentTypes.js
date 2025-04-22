@@ -8,7 +8,7 @@ module.exports = {
         "Content-Type": "text/plain"
     },
     js: {
-        "Content-Type": "text/js"
+        "Content-Type": "text/javascript"
     },
     jpg: {
         "Content-Type": "image/jpg"
