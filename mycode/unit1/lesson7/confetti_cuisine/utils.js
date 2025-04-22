@@ -10,8 +10,10 @@ module.exports = {
             if (error) {
                 res.writeHead(httpStatus.INTERNAL_SERVER_ERROR, contentTypes.html);
                 res.end("There was an error serving content!");
+            } else {
+                res.end(data);
             }
-            res.end(data);
+
         });
     }
 };
