@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const homeController = require("./controllers/homeController");
 const layouts = require("express-ejs-layouts");
+const contact = require("./controllers/contactController")
 
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
@@ -25,6 +26,8 @@ app.get("/items/:vegetable", homeController.sendReqParam);
 app.post("/", homeController.sendPost);
 
 app.get("/name/:myName", homeController.respondWithName);
+
+app.get("/contact/:myName", contact.contactUs);
 
 app.listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
