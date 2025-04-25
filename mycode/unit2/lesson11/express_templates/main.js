@@ -31,6 +31,11 @@ app.get("/name/:myName", homeController.respondWithName);
 app.use(errorController.respondNoResourceFound);
 app.use(errorController.respondInternalError);
 
+app.get("/force-error", (req, res, next) => {
+    // Intentionally trigger an error
+    next(new Error("Forced internal server error"));
+});
+
 app.listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
 });
