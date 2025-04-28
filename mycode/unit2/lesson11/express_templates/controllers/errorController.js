@@ -14,7 +14,7 @@ exports.respondNoResourceFound = (req, res) => {
     res.sendFile(`./public/${errorCode}.html`, { root: "./" });
 };
 
-exports.respondInternalError = (req, res) => {
+exports.respondInternalError = (error, req, res) => {
     let errorCode = httpStatus.INTERNAL_SERVER_ERROR;//500 error
     console.log(`ERROR occurred: ${error.stack}`)
     res.status(errorCode);
