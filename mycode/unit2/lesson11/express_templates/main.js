@@ -29,7 +29,7 @@ app.get("/name/:myName", homeController.respondWithName);
 //error handling middleware
 // app.use(errorController.logErrors);
 app.use(errorController.respondNoResourceFound);
-app.use(errorController.respondInternalError);
+// app.use(errorController.respondInternalError);
 
 app.get("/force-error", (req, res, next) => {
     // Intentionally trigger an error
