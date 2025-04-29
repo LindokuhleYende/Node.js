@@ -16,13 +16,23 @@ MongoDB.connect(dbURL, (error, client) => {
   let db = client.db(dbName);
   //insert a document into our collection
   db.collection("contacts")
-  .insert({
-    name: "Jada Mathele",
-    email: "jada@mathele.com"
-  }, (error, db) => {
-    if (error) throw error;
-    console.log(db);
-  });
+    .insert({
+      name: "Jada Mathele",
+      email: "jada@mathele.com",
+    }, (error, db) => {
+      if (error) throw error;
+      console.log(db);
+    });
+
+  db.collection("address")
+    .insert({
+      street: "Rockville",
+      suburb: "Moroka",
+      Province: "Gauteng"
+    }, (error, db) => {
+      if (error) throw error;
+      console.log(db);
+    });
   //find contacts 
   //print them to console as an array
   db.collection("contacts")
