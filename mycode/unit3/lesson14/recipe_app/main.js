@@ -42,7 +42,7 @@ query
     console.error(err); // Handle errors
   });
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3060);
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
