@@ -15,11 +15,11 @@ const subscriberSchema = mongoose.Schema({
     },
     zipCode: {
         type: Number,
-        min: [10000, "Zip Code must be 5 digits long"],
+        min: [100, "Zip Code must be 3 digits long"],
         max: 99999//zipCode must be 5 digits long
     },
     //courses subscribers have been enrolled in 
-    courses: [{type: mongoose.Schema.Types.ObjectId, ref: "Course"}]
+    courses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Course" }]
 });
 
 //returns subscriber information
