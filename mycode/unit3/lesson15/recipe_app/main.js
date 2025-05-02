@@ -10,7 +10,7 @@ const Subscriber = require("./models/subscriber");
 const subscriberController = require("./controllers/subscribersController");
 
 //connecting to database
-mongoose.connect("mongodb://0.0.0.0:27017/recipe_db",
+mongoose.connect("mongodb://0.0.0.0:27017/node_project",
   { useNewUrlParser: true }
 );
 
@@ -48,8 +48,8 @@ app.get("/", homeController.index);//index.ejs
 app.get("/courses", homeController.showCourses);//courses.ejs
 
 app.get("/subscribers", subscriberController.getAllSubscribers, (req, res, next) => {
-    res.render("subscribers", {subscribers: req.data});
-  }//subscribers.ejs
+  res.render("subscribers", { subscribers: req.data });
+}//subscribers.ejs
 );
 
 app.get("/contact", subscriberController.getSubscriptionPage);
