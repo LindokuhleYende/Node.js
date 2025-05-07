@@ -15,7 +15,11 @@ module.exports = {
       });
   },
   indexView: (req, res) => {
-    res.render("courses/index");
+    res.render("courses/index", {
+      flashMessages: {
+        success: "Load all the courses"
+      }
+    });
   },
   new: (req, res) => {
     res.render("courses/new");
