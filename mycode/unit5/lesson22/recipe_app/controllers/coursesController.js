@@ -29,11 +29,13 @@ module.exports = {
     };
     Course.create(courseParams)
       .then(course => {
+        req.flash("success", `${course.title} was created successfully!`);
         res.locals.redirect = "/courses";
         res.locals.course = course;
         next();
       })
       .catch(error => {
+        req.flash("error", `Failed to create course because: ${error.message}.`)
         console.log(`Error saving course: ${error.message}`);
         next(error);
       });
